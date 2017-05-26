@@ -1,0 +1,34 @@
+<div class="jumbo">
+  <div class="right tomster"></div>
+  <h2>Welcome!</h2>
+  <p>Find your Show and checkmark it off to track watching it!</p>
+  {{#link-to 'about' class="button"}}
+    About Us
+  {{/link-to}}
+</div>
+
+{{!--Instead of having data here we are extracting it from show-listing.js componenet!--}}
+{{!--The show listing componenet manages how a user sees and interacts with a rental--}}
+
+{{#each model as |showUnit|}}
+  {{show-listing show=showUnit}}
+{{/each}}
+
+
+
+
+{{!--{{#each model as |show|}}
+  <article class="showlisting">
+    <h3>{{show.title}}</h3>
+    <div class="detail owner">
+      <span>Producer:</span> {{show.producer}}
+    </div>
+    <div class="detail type">
+      <span>Rating:</span> {{show.rating}}
+    </div>
+    <div class="detail location">
+      <span>Description:</span> {{show.description}}
+    </div>
+  </article>
+{{/each}}--}}
+

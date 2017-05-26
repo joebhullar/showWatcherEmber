@@ -1,0 +1,34 @@
+
+<article class="listing">
+ <a {{action 'toggleImageSize'}} class="image {{if isWide "wide"}}">
+  <img src="{{show.image}}" alt="">
+   <small>View Larger</small>
+ </a>
+  <h3>{{show.title}}</h3> 
+    <div>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Watched</label>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Did not watch</label>
+  <label>
+    <input type="checkbox" class="radio" value="1" name="fooby[1][]" />Watched Some of it</label>
+</div>
+    {{!--<h4>|<input {{action "selectOnlyThis" id}} type="checkbox" id="Status1" value="Watchedsomeofit" onclick="selectOnlyThis(this.id)" /> Did not watch | 
+    <input  {{action "selectOnlyThis" id}}  type="checkbox" id="Status2" value="Watchedsomeofit" onclick="selectOnlyThis(this.id)" /> Watched some of it |  
+    <input {{action "selectOnlyThis" id}}  type="checkbox" id="Status3" value="Watchedsomeofit" onclick="selectOnlyThis(this.id)" /> Watched </h4>--}}
+  <div class="detail owner">
+    <span>Producer:</span> {{show.producer}}
+  </div>
+  <div class="detail type">
+    <span>Rating:</span> {{show.rating}}
+  </div>
+    <div class="detail status">
+    <span>Watch Status:</span> {{watch-status-type show.watchstatus}}
+      - {{show.watchstatus}}
+  </div>
+  <div class="detail location">
+    <span>Description:</span> {{show.description}}
+  </div>
+</article>
+
+
