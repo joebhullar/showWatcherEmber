@@ -6,13 +6,32 @@ export default Ember.Component.extend({
         		toggleImageSize() {
             							this.toggleProperty('isWide');
         				  		  },
-        		selectOnlyThis(id) {
-				        			    for (var i = 1;i <= 3; i++)
-				    					 {
-				        						document.getElementById("Status" + i).checked = false;
-				    					 }
-				    					 document.getElementById(id).checked = true;
+        		func() {
+				        			    
+
+                    var val ="";
+                    var type = document.getElementsByName("type");
+                    if(type[0].checked)
+                    {
+                         val = type[0].value;
+
+                    }
+                    
+                    else if(type[1].checked)
+                    {
+                         val = type[1].value;
+                    }
+                    
+                    else if(type[2].checked)
+                    {
+                         val = type[2].value;
+                    }
+                    console.log(val);
+
+                
         						    }		  
   			 }
 
 });
+
+
