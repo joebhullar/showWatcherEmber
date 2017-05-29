@@ -2,35 +2,15 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
     isWide: false,
+    statusChanged: Ember.observer('show', 'show.watchstatus', function() {
+        console.info('watchstatus');
+        this.get('show').save();
+    }),
     actions: {
         		toggleImageSize() {
             							this.toggleProperty('isWide');
-        				  		  },
-        		func() {
-				        			    
-
-                    var val ="";
-                    var type = document.getElementsByName("type");
-                    if(type[0].checked)
-                    {
-                         val = type[0].value;
-
-                    }
-                    
-                    else if(type[1].checked)
-                    {
-                         val = type[1].value;
-                    }
-                    
-                    else if(type[2].checked)
-                    {
-                         val = type[2].value;
-                    }
-                    console.log(val);
-
-                
-        						    }		  
-  			 }
+        				  		  }
+    }
 
 });
 

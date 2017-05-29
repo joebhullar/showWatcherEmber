@@ -6,9 +6,9 @@
  </a>
   <h3>{{show.title}}</h3> 
 <div>
-    <input  {{action 'func'}} type="checkbox" name="type" value="Watched" id="h"/>Watched<br/>
-    <input {{action 'func'}} type="checkbox" name="type" value="Watched some of it" id="r" />Watched some of it<br/>
-    <input  {{action 'func'}} type="checkbox" name="type" value="Did not watch" id="a" />Did not watch<br/>
+    {{input type="radio" name=(concat 'watchedstatus-' show.id) value=show.watchstatus checked=show.watchstatus }}Watched<br />
+    {{input type="radio" name=(concat 'watchedstatus-' show.id) value=show.watchstatus   checked=show.watchstatus }}Watched some of it<br />
+    {{input type="radio" name=(concat 'watchedstatus-' show.id) value=show.watchstatus  checked=show.watchstatus }}Did not watch<br />
 
 </div>
   <div class="detail owner">
